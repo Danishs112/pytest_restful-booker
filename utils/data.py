@@ -1,4 +1,5 @@
-from data_generator import DataGenerator
+from utils.data_generator import DataGenerator
+
 
 class TestData:
 
