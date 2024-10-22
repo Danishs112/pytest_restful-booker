@@ -1,6 +1,9 @@
 from utils.methods import Methods
 from utils.data import TestData
 from utils.assertions import Assertions
+from utils.logger import logger
+
+
 
 base_url = TestData.BASE_URL
 cookie = ""  # User Token
@@ -57,6 +60,7 @@ class Actions:
         response_object = Actions.create_booking(create_object)
         response_data = response_object.json()
         Assertions.compare_type_values(response_data, dict)
+        logger.info('CREATE first Booking -'+ response_object.text)
         print(response_object.text)
         global booking1
         booking1  = response_data["bookingid"]
@@ -77,8 +81,8 @@ class Actions:
 
         response_object = Actions.create_booking(create_object)
         response_data = response_object.json()
-        Assertions.compare_type_values(response_data.json(), dict)
-        print(response_object.text)
+        Assertions.compare_type_values(response_data, dict)
+        logger.info('CREATE Second Booking -' + response_object.text)
         global booking2
         booking2  = response_data["bookingid"]
 
@@ -88,7 +92,7 @@ class Actions:
         url  = f"{base_url}/{get_resource}"
         result_get = Methods.get(url)
         Assertions.check_array_size_greater_than_zero(result_get.text,0)
-        print(result_get.text)
+        logger.info('GET All Booking -' + result_get.text)
         return result_get
 
     @staticmethod
@@ -105,6 +109,7 @@ class Actions:
         }
         response_object = Actions.update_booking(update_obj,booking1)
         Assertions.compare_type_values(response_object.json(), dict)
+        logger.info('Update the  first Booking -' + response_object.text)
         print(response_object.text)
 
     @staticmethod
@@ -114,6 +119,7 @@ class Actions:
         }
         response_object = Actions.update_booking(update_obj,booking2)
         Assertions.compare_type_values(response_object.json(), dict)
+        logger.info('Update the Second Booking -' + response_object.text)
         print(response_object.text)
 
     @staticmethod
@@ -122,11 +128,14 @@ class Actions:
         delete_url = f"{base_url}/{delete_resource}/{booking1}"
         result_delete = Methods.delete(delete_url, headers)
         Assertions.compare_two_values(result_delete.text,"Created")
+        logger.info('Delete the first Booking -' + result_delete.text)
 
 
 
 Actions.auth_user()
 Actions.create_first_booking()
+Actions.create_second_booking()
 Actions.get_booking()
 Actions.update_first_booking()
+Actions.update_second_booking()
 Actions.delete_first_booking()
