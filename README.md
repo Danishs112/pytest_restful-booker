@@ -12,7 +12,7 @@
         pip3 install -r requirements.txt
    ```
 
-  - Run the below the command to run all code
-    ```sh
-      pytest --html=report.html --self-contained-html --capture=tee-sys
-    ```
+- Run the below the command to run all code
+  ```sh
+    pytest --html=report.html --self-contained-html --capture=tee-sys
+  ```
