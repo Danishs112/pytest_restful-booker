@@ -7,7 +7,7 @@
 - Navigate to project folder
 - Open CLI
 - Configure a virtual environment
-- Run the below to install the requirements for this project
+- Run the below command to install the requirements for this project
     ```sh
         pip3 install -r requirements.txt
    ```
