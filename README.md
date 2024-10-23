@@ -16,7 +16,7 @@ This test automation solution is a POC that needs to be implemented. The Applica
 
 4. Present the data in the log file as html report.
 
-Test data :
+### Test data :
    - Test1 with total price 500 who deposit is paid with random check in and checkout dates and having preference of lunch as additional need.
    - Test2 with total price of 1000 whose deposit is not paid yet with random check in and checkout dates having no preference for additional needs
 
