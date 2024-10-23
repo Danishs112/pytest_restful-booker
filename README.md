@@ -2,7 +2,7 @@
 
 ## Problem Solved
 
-This test automation solution is a POC that needs to be implemented. The Application Under Test(AUT) for this POC is Restful Booker portal [https://restful-booker.herokuapp.com/apidoc/](https://restful-booker.herokuapp.com/apidoc/)
+This test automation solution is a POC that needs to be implemented. The Application Under Test (AUT) for this POC is the Restful Booker portal (https://restful-booker.herokuapp.com/apidoc/).
 
 ## Scenarios Covered
 
